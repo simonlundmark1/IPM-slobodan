@@ -142,7 +142,7 @@
               </div>
               <div class="form-group">
                 <label for="newProductImgurl">Image URL</label>
-                <input type="text" class="form-control" id="newProductImgurl" placeholder="Enter Image URL" required>
+                <input type="text" class="form-control" id="productImgurl" required>
             </div>
             
               <button type="submit" class="btn btn-success">Create Product</button>
@@ -228,11 +228,12 @@
                             <p class="card-text">${product.description}</p>
                             <p class="card-text"><strong>Price:</strong> $${product.price}</p>
                             <p class="card-text"><strong>Stock:</strong> ${product.amountInStock}</p>
-                            <img src="${product.imgurl}" alt="Uploaded Product Image" style="max-width: 100px; max-height: 150px;">
+                            <img src="${product.imgurl}" alt="Uploaded Product Image" style="max-width: 150px; max-height: 150px;">
 
                         </div>
                         <div class="card-footer d-flex justify-content-between">
-                            <button class="btn btn-warning btn-sm" onclick="showUpdateModal('${product._id}', '${product.name}', '${product.category}', '${product.description}', ${product.price}, ${product.amountInStock})">Uppdatera</button>
+<button class="btn btn-warning btn-sm" 
+    onclick="showUpdateModal('${product._id}', '${product.name}', '${product.category}', '${product.description}', ${product.price}, ${product.amountInStock}, '${product.imgurl}')">Uppdatera</button>
                             <button class="btn btn-danger btn-sm" onclick="deleteProduct('${product._id}')">Ta bort</button>
                         </div>
                     </div>
