@@ -142,8 +142,7 @@
               </div>
               <div class="form-group">
                 <label for="newProductImgurl">Image URL</label>
-                <input type="text" class="form-control" id="productImgurl" required>
-            </div>
+                <input type="text" class="form-control" id="newProductImgurl" required>            </div>
             
               <button type="submit" class="btn btn-success">Create Product</button>
             </form>
@@ -185,6 +184,12 @@
                 <label for="productStock">Stock</label>
                 <input type="number" class="form-control" id="productStock" required>
               </div>
+              <div class="form-group">
+                <label for="newProductImgurl">Image URL</label>
+                <input type="text" class="form-control" id="productImgurl" required>
+            </div>
+                </div>
+
               <button type="submit" class="btn btn-success">Uppdatera produkt</button>
             </form>
           </div>
@@ -260,18 +265,17 @@
         // Function to add a new product
         document.getElementById('createProductForm').addEventListener('submit', function(event) {
             event.preventDefault();
-
             const newProduct = {
-                name: document.getElementById('newProductName').value,
-                category: document.getElementById('newProductCategory').value,
-                description: document.getElementById('newProductDescription').value,
-                price: parseFloat(document.getElementById('newProductPrice').value),
-                amountInStock: parseInt(document.getElementById('newProductStock').value, 10),
-                manufacturer: {
-                    name: document.getElementById('newProductManufacturer').value,
-                },
-                imgurl: document.getElementById('newProductImgurl').value
-            };
+    name: document.getElementById('newProductName').value,  // Check here
+    category: document.getElementById('newProductCategory').value,
+    description: document.getElementById('newProductDescription').value,
+    price: parseFloat(document.getElementById('newProductPrice').value),
+    amountInStock: parseInt(document.getElementById('newProductStock').value, 10),
+    manufacturer: {
+        name: document.getElementById('newProductManufacturer').value,
+    },
+    imgurl: document.getElementById('newProductImgurl').value  // Check here as well
+};
 
             fetch(apiUrl, {
                 method: 'POST',
